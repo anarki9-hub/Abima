@@ -1,0 +1,142 @@
+:root {
+  --blue-dark: #0d3b66;
+  --yellow-soft: #f4d35e;
+  --white: #ffffff;
+  --text-dark: #222;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+header {
+  background: var(--blue-dark);
+  color: var(--white);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation mobile scrollable */
+nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: var(--yellow-soft);
+  color: var(--blue-dark);
+  border-radius: 5px;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.hero {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--blue-dark);
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input, textarea, button {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--blue-dark);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--yellow-soft);
+  color: var(--blue-dark);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--blue-dark);
+  color: var(--white);
+  margin-top: 2rem;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    overflow-x: visible;
+    justify-content: flex-end;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
